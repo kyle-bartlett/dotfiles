@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run"
+      ]
+    },
+    "Notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "headers": {}
+    },
+    "rube": {
+      "url": "https://rube.composio.dev/mcp?agent=cursor",
+      "headers": {}
+    },
+    "GitKraken": {
+      "command": "/Users/kylebartlett/Library/Application Support/Cursor/User/globalStorage/eamodio.gitlens/gk",
+      "type": "stdio",
+      "name": "GitKraken",
+      "args": [
+        "mcp",
+        "--host=cursor",
+        "--source=gitlens",
+        "--scheme=cursor"
+      ],
+      "env": {}
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=aortedsojjtbcacfjkzr",
+      "headers": {}
+    }
+  }
+}

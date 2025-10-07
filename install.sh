@@ -66,13 +66,14 @@ echo ""
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_DIR="$HOME/.dotfiles_backup_$TIMESTAMP"
 
-if [ -f ~/.zshrc ] || [ -f ~/.tmux.conf ] || [ -f ~/.gitconfig ]; then
+if [ -f ~/.zshrc ] || [ -f ~/.tmux.conf ] || [ -f ~/.gitconfig ] || [ -f ~/.cursor/mcp.json ]; then
     echo "📋 Backing up existing configs to $BACKUP_DIR"
     mkdir -p "$BACKUP_DIR"
 
     [ -f ~/.zshrc ] && cp ~/.zshrc "$BACKUP_DIR/.zshrc"
     [ -f ~/.tmux.conf ] && cp ~/.tmux.conf "$BACKUP_DIR/.tmux.conf"
     [ -f ~/.gitconfig ] && cp ~/.gitconfig "$BACKUP_DIR/.gitconfig"
+    [ -f ~/.cursor/mcp.json ] && cp ~/.cursor/mcp.json "$BACKUP_DIR/cursor-mcp.json"
 
     echo "✅ Backup complete"
 fi
@@ -88,9 +89,14 @@ ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 
+# Create ~/.cursor directory if it doesn't exist
+mkdir -p "$HOME/.cursor"
+ln -sf "$DOTFILES_DIR/cursor-mcp.json" "$HOME/.cursor/mcp.json"
+
 echo "  ✓ ~/.zshrc → $DOTFILES_DIR/.zshrc"
 echo "  ✓ ~/.tmux.conf → $DOTFILES_DIR/.tmux.conf"
 echo "  ✓ ~/.gitconfig → $DOTFILES_DIR/.gitconfig"
+echo "  ✓ ~/.cursor/mcp.json → $DOTFILES_DIR/cursor-mcp.json"
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
