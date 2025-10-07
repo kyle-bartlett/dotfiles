@@ -8,6 +8,7 @@ Enhanced terminal configuration with modern tools and shortcuts for productive d
 - **`.zshrc`** - Enhanced Zsh with 40+ custom aliases and functions
 - **`.tmux.conf`** - Tmux with vim-style navigation and mouse support
 - **`.gitconfig`** - Git with delta integration and helpful aliases
+- **`cursor-mcp.json`** - Cursor MCP integrations (Docker, Notion, Composio/Rube, GitKraken, Supabase)
 
 ### Tools Installed
 - `bat` - Better cat with syntax highlighting
@@ -52,6 +53,7 @@ That's it! Your terminal is now configured.
 4. Creates symlinks from `~/.zshrc` → `~/dotfiles/.zshrc` (etc.)
 5. Configures FZF keybindings
 6. Sets up Git delta
+7. Configures Cursor MCP integrations (`~/.cursor/mcp.json`)
 
 ## 🔄 Updating Dotfiles
 
@@ -215,6 +217,26 @@ brew install --cask docker
 # Prettier terminal prompt
 brew install powerlevel10k
 ```
+
+## 🎯 Cursor Integration
+
+### MCP (Model Context Protocol) Servers
+The dotfiles include MCP server configurations for Cursor:
+
+- **Docker MCP** - Container management
+- **Notion** - Knowledge base integration
+- **Rube/Composio** - Salesforce and external API integrations
+- **GitKraken** - Advanced git operations
+- **Supabase** - Database management
+
+After running `./install.sh`, these integrations will be available in Cursor automatically.
+
+### Project-Specific Rules
+Many projects include `.cursor/rules/*.mdc` files for project-specific AI guidance. These are tracked in each project's git repo and work alongside global configs.
+
+**Example projects with Cursor rules:**
+- `ZipWise/.cursor/rules/` - Mobile app development rules
+- `Google-Sheets-Scripts/.cursor/rules/` - Apps Script patterns
 
 ## 🆘 Troubleshooting
 
